@@ -1,5 +1,6 @@
 Program chama;
 var
+op: char;
 a,b,soma,sub,multi: integer;
 divisao: real;
 Begin
@@ -8,11 +9,27 @@ Begin
    readln(a,b);
    if (b=0) then write('numero invalido')
    else begin
-           divisao:= a/b;
-           soma:=a+b;
-           sub:=a-b;
-           multi:=a*b;
-           writeln(divisao:0:2,' ',soma,' ',sub,' ',multi);
+           write('Digite o operador: ');
+           readln(op);
+           case op of
+           '+':begin
+                   soma:=a+b;
+                   write(soma);
+                end;
+           '-':begin
+					         sub:=a-b;
+					         write(sub);
+					      end;
+					 '*':begin
+					         multi:=a*b;
+					         write(multi);
+					      end;			    
+           '/':begin
+					         divisao:= a/b;
+					         write(divisao:0:1);
+					      end;
+					   else write('operador inválido');			   
+					 end;
         end;   
    readln;
 End.
